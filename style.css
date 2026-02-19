@@ -1,34 +1,78 @@
 :root {
-  --primary-color: #bcff00;
-  --secondary-color: #b2286d;
-  --third-color: #e4b006;
+  --primary-color: #F6DA64;
+  --secondary-color: #4076B2;
+  --third-color: #4076B2;
 }
 
+/* Override Bootstrap body bg - PRIORIDAD ALTA */
 body {
-  background-color: black !important;
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(246, 218, 100, 0.1) 0, transparent 25%),
+    linear-gradient(160deg, #2A3D5A 0%, #1E2739 40%, #0F1419 100%);
+  background-attachment: fixed !important;
+  overflow: hidden;
 }
-p {
-  color: white;
+
+/* Estrellas mejoradas - DORADAS Y MÁS DENSAS */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, var(--primary-color) 0, transparent 50%),
+    radial-gradient(1px 1px at 100px 50px, rgba(255, 255, 255, 0.6) 0, transparent 50%),
+    radial-gradient(1.5px 1.5px at 180px 120px, var(--primary-color) 0, transparent 50%),
+    radial-gradient(0.8px 0.8px at 280px 200px, rgba(255, 255, 255, 0.4) 0, transparent 50%),
+    radial-gradient(1.2px 1.2px at 60px 250px, var(--primary-color) 0, transparent 50%),
+    radial-gradient(1px 1px at 320px 80px, rgba(255, 255, 255, 0.5) 0, transparent 50%),
+    radial-gradient(1.8px 1.8px at 220px 320px, var(--primary-color) 0, transparent 50%);
+  background-size: 350px 350px;
+  opacity: 0.7;
+  animation: starsMove 45s linear infinite;
+  will-change: transform;
 }
+
+@keyframes starsMove {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-80px, -40px, 0);
+  }
+}
+
+/* Container transparente - VE EL FONDO */
 .container {
+  background: none !important;
+  backdrop-filter: none !important;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* height: 100vh; */
-  /* background-image: url(/images/Adakort-logo.jpeg); */
-  background-size: cover;
-  padding: 1em;
+  padding: 2em;
   gap: 1em;
+}
+
+p {
+  color: white;
+}
+
+h1,
+h2 {
+  color: var(--primary-color);
 }
 
 .initialCard {
   width: 300px;
   height: 415px;
   margin-top: 1em;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Semi-transparente para fondo */
   border-radius: 4%;
-  /* border: blueviolet 2px solid; */
   -webkit-box-shadow: 5px 5px 23px 1px var(--third-color);
   box-shadow: 5px 5px 23px 1px var(--third-color);
 }
@@ -43,7 +87,6 @@ p {
   height: 6em;
   width: 19em;
   color: white;
-
   text-align: center;
 }
 
@@ -51,13 +94,22 @@ p {
   height: 1em;
 }
 
+.spacer-1 {
+  height: 2em;
+}
+
+/* Agregado para footer */
+
 .button-footer {
   display: flex;
   gap: 1em;
 }
 
-.button-footer a:link:active, a:visited:active, a:hover{
-  background-color: var(--primary-color) !important;
+button,
+.button-footer a:link:active,
+a:visited:active,
+a:hover {
+  background-color: var(--third-color) !important;
   border-color: var(--primary-color) !important;
 }
 
@@ -74,9 +126,97 @@ p {
   color: white !important;
 }
 
-#derechos {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.dev-footer {
+  margin-top: 2em;
+  padding: 1em 0;
+  color: rgba(246, 218, 100, 0.6);
+  /* Dorado tenue */
+  font-family: "Alegreya SC", serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-align: center;
+  border-top: 1px solid rgba(246, 218, 100, 0.2);
+  width: 100%;
+}
+
+.dev-footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.dev-footer a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px var(--primary-color);
+  transform: translateY(-1px);
+}
+
+/* Responsive móvil */
+@media (max-width: 576px) {
+  .dev-footer {
+    font-size: 0.75rem;
+    padding: 0.5em 0;
+  }
+}
+
+/* Clases Alegreya SC */
+.alegreya-sc-regular {
+  font-family: "Alegreya SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.alegreya-sc-medium {
+  font-family: "Alegreya SC", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.alegreya-sc-bold {
+  font-family: "Alegreya SC", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.alegreya-sc-extrabold {
+  font-family: "Alegreya SC", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.alegreya-sc-black {
+  font-family: "Alegreya SC", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.alegreya-sc-regular-italic {
+  font-family: "Alegreya SC", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.alegreya-sc-medium-italic {
+  font-family: "Alegreya SC", serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.alegreya-sc-bold-italic {
+  font-family: "Alegreya SC", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.alegreya-sc-extrabold-italic {
+  font-family: "Alegreya SC", serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.alegreya-sc-black-italic {
+  font-family: "Alegreya SC", serif;
+  font-weight: 900;
+  font-style: italic;
 }
