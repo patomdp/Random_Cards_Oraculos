@@ -1,0 +1,82 @@
+:root {
+  --primary-color: #bcff00;
+  --secondary-color: #b2286d;
+  --third-color: #e4b006;
+}
+
+body {
+  background-color: black !important;
+}
+p {
+  color: white;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; */
+  /* background-image: url(/images/Adakort-logo.jpeg); */
+  background-size: cover;
+  padding: 1em;
+  gap: 1em;
+}
+
+.initialCard {
+  width: 300px;
+  height: 415px;
+  margin-top: 1em;
+  background-color: black;
+  border-radius: 4%;
+  /* border: blueviolet 2px solid; */
+  -webkit-box-shadow: 5px 5px 23px 1px var(--third-color);
+  box-shadow: 5px 5px 23px 1px var(--third-color);
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+#text-container {
+  height: 6em;
+  width: 19em;
+  color: white;
+
+  text-align: center;
+}
+
+.spacer-sm {
+  height: 1em;
+}
+
+.button-footer {
+  display: flex;
+  gap: 1em;
+}
+
+.button-footer a:link:active, a:visited:active, a:hover{
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.btn-pri {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: black !important;
+  font-weight: bold !important;
+}
+
+.btn-sec {
+  background-color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+  color: white !important;
+}
+
+#derechos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
