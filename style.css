@@ -220,3 +220,105 @@ a:hover {
   font-weight: 900;
   font-style: italic;
 }
+
+
+
+/* RESPONSIVE MOBILE - PRIORIDAD ALTA */
+@media (max-width: 768px) {
+  .container {
+    padding: 0.5em !important;
+    gap: 0.8em;
+  }
+
+  h1.alegreya-sc-bold {
+    font-size: 2rem;
+    /* Título más chico */
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  h2.alegreya-sc-medium {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  .initialCard {
+    width: 90vw !important;
+    /* 90% ancho pantalla */
+    max-width: 280px;
+    height: auto !important;
+    /* Aspect ratio natural */
+    aspect-ratio: 300/415;
+    /* Mantiene proporción cards */
+    margin: 0.5em auto;
+  }
+
+  .button-container {
+    flex-direction: column !important;
+    /* Apilados vertical */
+    width: 90vw;
+    max-width: 300px;
+    gap: 0.7em;
+  }
+
+  button.btn-pri,
+  button.btn-sec {
+    width: 100% !important;
+    /* Botones full-width */
+    font-size: 1rem;
+    padding: 0.8em;
+  }
+
+  #text-container {
+    width: 90vw !important;
+    height: auto !important;
+    min-height: 4em;
+    font-size: 1rem;
+    padding: 0 1em;
+  }
+
+  .spacer-sm {
+    height: 0.5em;
+  }
+
+  .spacer-1 {
+    height: 1em;
+  }
+
+  .button-footer {
+    flex-direction: column !important;
+    gap: 0.5em;
+    margin-top: 1em;
+  }
+
+  .button-footer .btn-sec {
+    width: 200px;
+    margin: 0 auto;
+  }
+
+  .dev-footer {
+    font-size: 0.7rem;
+    padding: 0.5em 0.5em 1em;
+  }
+}
+
+/* EXTRA SMALL < 576px */
+@media (max-width: 576px) {
+  .initialCard {
+    width: 95vw !important;
+    max-width: 260px;
+  }
+
+  h1.alegreya-sc-bold {
+    font-size: 1.8rem;
+  }
+
+  #text-container {
+    font-size: 0.95rem;
+  }
+
+  /* Oculta estrellas en mobile muy pequeño para perf */
+  body::before {
+    opacity: 0.4;
+  }
+}
